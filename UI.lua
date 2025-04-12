@@ -24,7 +24,7 @@ Top.BorderSizePixel = 0
 Top.BorderColor3 = Color3.new(0, 0, 0)
 Top.Parent = Window
 
--- DRAG FUNCTION START
+--[[ DRAG FUNCTION START
 local dragging = false
 local dragStart, startPos
 
@@ -52,7 +52,7 @@ UserInputService.InputChanged:Connect(function(input)
 			startPos.Y.Offset + delta.Y
 		)
 	end
-end)
+end) ]]
 
 local Title = Instance.new("TextLabel")
 Title.Name = "Title"
@@ -253,7 +253,7 @@ Close.TextSize = 21
 Close.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 Close.Parent = Window
 
-local OpenButton = Instance.new("TextButton")
+--[[local OpenButton = Instance.new("TextButton")
 OpenButton.Name = "OpenButton"
 OpenButton.Text = "Open UI"
 OpenButton.Size = UDim2.new(0, 100, 0, 40)
@@ -312,7 +312,7 @@ end)
 
 OpenButton.MouseButton1Click:Connect(function()
 	 Window.Visible = true
-end)
+end) ]]
 ------------ Close/PermClose/OpenButton End
 
 ------------ UI Design
