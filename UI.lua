@@ -68,6 +68,7 @@ Title.TextColor3 = Color3.new(1, 1, 1)
 Title.TextSize = 16
 Title.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 Title.Parent = Top
+Title.Visible = true
 
 local Game = Instance.new("TextLabel")
 Game.Name = "Game"
@@ -84,6 +85,7 @@ Game.TextSize = 16
 Game.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 Game.TextXAlignment = Enum.TextXAlignment.Left
 Game.Parent = Top
+Game.Visible = true
 
 local UICorner = Instance.new("UICorner")
 UICorner.Name = "UICorner"
@@ -105,6 +107,7 @@ Tab.BorderSizePixel = 0
 Tab.BorderColor3 = Color3.new(0, 0, 0)
 Tab.Transparency = 1
 Tab.Parent = Window
+Tab.Visible = true
 
 local UICorner3 = Instance.new("UICorner")
 UICorner3.Name = "UICorner"
@@ -124,6 +127,7 @@ Tab1.TextColor3 = Color3.new(1, 1, 1)
 Tab1.TextSize = 14
 Tab1.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 Tab1.Parent = Tab
+Tab1.Visible = true
 
 local Tab2 = Instance.new("TextButton")
 Tab2.Name = "Tab2"
@@ -138,6 +142,7 @@ Tab2.TextColor3 = Color3.new(1, 1, 1)
 Tab2.TextSize = 14
 Tab2.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 Tab2.Parent = Tab
+Tab2.Visible = true
 
 local Tab3 = Instance.new("TextButton")
 Tab3.Name = "Tab3"
@@ -152,6 +157,7 @@ Tab3.TextColor3 = Color3.new(1, 1, 1)
 Tab3.TextSize = 14
 Tab3.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 Tab3.Parent = Tab
+Tab3.Visible = true
 
 local Tab4 = Instance.new("TextButton")
 Tab4.Name = "Tab4"
@@ -166,6 +172,7 @@ Tab4.TextColor3 = Color3.new(1, 1, 1)
 Tab4.TextSize = 14
 Tab4.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 Tab4.Parent = Tab
+Tab4.Visible = true
 
 local Tab5 = Instance.new("TextButton")
 Tab5.Name = "Tab5"
@@ -180,6 +187,7 @@ Tab5.TextColor3 = Color3.new(1, 1, 1)
 Tab5.TextSize = 14
 Tab5.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 Tab5.Parent = Tab
+Tab5.Visible = true
 
 local Tab6 = Instance.new("TextButton")
 Tab6.Name = "Tab6"
@@ -194,6 +202,7 @@ Tab6.TextColor3 = Color3.new(1, 1, 1)
 Tab6.TextSize = 14
 Tab6.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 Tab6.Parent = Tab
+Tab6.Visible = true
 
 local Tab7 = Instance.new("TextButton")
 Tab7.Name = "Tab7"
@@ -208,6 +217,7 @@ Tab7.TextColor3 = Color3.new(1, 1, 1)
 Tab7.TextSize = 14
 Tab7.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 Tab7.Parent = Tab
+Tab7.Visible = true
 
 local Tab8 = Instance.new("TextButton")
 Tab8.Name = "Tab8"
@@ -222,6 +232,7 @@ Tab8.TextColor3 = Color3.new(1, 1, 1)
 Tab8.TextSize = 14
 Tab8.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 Tab8.Parent = Tab
+Tab8.Visible = true
 
 local PermClose = Instance.new("TextButton")
 PermClose.Name = "PermClose"
@@ -237,6 +248,7 @@ PermClose.TextColor3 = Color3.new(0.403922, 0.403922, 0.403922)
 PermClose.TextSize = 21
 PermClose.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 PermClose.Parent = Window
+PermClose.Visible = true
 
 local Close = Instance.new("TextButton")
 Close.Name = "Close"
@@ -252,6 +264,7 @@ Close.TextColor3 = Color3.new(0.403922, 0.403922, 0.403922)
 Close.TextSize = 21
 Close.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 Close.Parent = Window
+Close.Visible = true
 
 --[[local OpenButton = Instance.new("TextButton")
 OpenButton.Name = "OpenButton"
