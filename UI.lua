@@ -1,7 +1,5 @@
 local G2L = {}
-local G2L1 = {}
 
--- Add elements to G2L
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"))
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
@@ -197,65 +195,6 @@ G2L["14"]["Color"] = Color3.fromRGB(58, 58, 58);
 G2L["15"] = Instance.new("UIAspectRatioConstraint", G2L["1"]);
 G2L["15"]["AspectRatio"] = 2.19106;
 
-G2L1["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
-G2L1["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
-
--- StarterGui.ScreenGui.Open
-G2L1["2"] = Instance.new("Frame", G2L1["1"]);
-G2L1["2"]["Active"] = true;
-G2L1["2"]["BorderSizePixel"] = 0;
-G2L1["2"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L1["2"]["Size"] = UDim2.new(0.1, 0, 0.1, 0);
-G2L1["2"]["Position"] = UDim2.new(0.13928, 0, 0.53252, 0);
-G2L1["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L1["2"]["Name"] = [[Open]];
-G2L1["2"]["BackgroundTransparency"] = 0.4;
-
--- StarterGui.ScreenGui.Open.UICorner
-G2L1["3"] = Instance.new("UICorner", G2L1["2"]);
-G2L1["3"]["CornerRadius"] = UDim.new(0, 6);
-
--- StarterGui.ScreenGui.Open.Top
-G2L1["4"] = Instance.new("TextLabel", G2L1["2"]);
-G2L1["4"]["BorderSizePixel"] = 0;
-G2L1["4"]["TextSize"] = 14;
-G2L1["4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L1["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L1["4"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L1["4"]["BackgroundTransparency"] = 1;
-G2L1["4"]["Size"] = UDim2.new(0.5143, 0, 0.52846, 0);
-G2L1["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L1["4"]["Text"] = [[Abyss]];
-G2L1["4"]["Name"] = [[Top]];
-
--- StarterGui.ScreenGui.Open.OpenButton
-G2L1["5"] = Instance.new("TextButton", G2L1["2"]);
-G2L1["5"]["BorderSizePixel"] = 0;
-G2L1["5"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L1["5"]["TextSize"] = 25;
-G2L1["5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L1["5"]["FontFace"] = Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L1["5"]["Size"] = UDim2.new(1, 0, 0.47154, 0);
-G2L1["5"]["BackgroundTransparency"] = 1;
-G2L1["5"]["Name"] = [[OpenButton]];
-G2L1["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L1["5"]["Text"] = [[Open UI]];
-G2L1["5"]["Position"] = UDim2.new(0, 0, 0.52846, 0);
-
--- StarterGui.ScreenGui.Open.Game
-G2L1["6"] = Instance.new("TextLabel", G2L1["2"]);
-G2L1["6"]["BorderSizePixel"] = 0;
-G2L1["6"]["TextSize"] = 14;
-G2L1["6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L1["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L1["6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L1["6"]["BackgroundTransparency"] = 1;
-G2L1["6"]["Size"] = UDim2.new(0.35933, 0, 0.3561, 0);
-G2L1["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L1["6"]["Text"] = [[Game]];
-G2L1["6"]["Name"] = [[Game]];
-G2L1["6"]["Position"] = UDim2.new(0.39926, 0, 0, 0);
-
 -- return G2L["1"], require;
 
 local UIS = game:GetService("UserInputService")
@@ -300,86 +239,14 @@ end
 Top.InputBegan:Connect(onInputBegan)
 UIS.InputChanged:Connect(onInputChanged)
 
-local openFrame = G2L1["2"]
-local topLabel = G2L1["4"]  -- The Top label that needs to be touched
-local userInputService = game:GetService("UserInputService")
+local close = G2L["13"]
+local permclose = G2L["12"]
+local screengui = G2L["1"]
 
--- Variables for dragging
-local dragInput = nil
-local dragStart = nil
-local startPosition = nil
-
--- Function to handle the dragging
-local function updateDrag(input)
-    local delta = input.Position - dragStart
-    openFrame.Position = UDim2.new(startPosition.X.Scale, startPosition.X.Offset + delta.X, startPosition.Y.Scale, startPosition.Y.Offset + delta.Y)
+close.Activated:Connect(function()
+   screengui.Enabled = false
 end
 
--- Function to start dragging
-openFrame.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        -- Check if the mouse click is on the top part of the frame
-        local mousePosition = input.Position
-        local topPosition = topLabel.AbsolutePosition
-        local topSize = topLabel.AbsoluteSize
-
-        if mousePosition.Y >= topPosition.Y and mousePosition.Y <= topPosition.Y + topSize.Y then
-            -- Store initial mouse position when the drag starts
-            dragStart = mousePosition
-            startPosition = openFrame.Position
-
-            -- Connect to input changed to track the mouse movement
-            dragInput = userInputService.InputChanged:Connect(updateDrag)
-        end
-    end
-end)
-
--- Function to stop dragging
-openFrame.InputEnded:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        -- Disconnect the drag update when the mouse is released
-        if dragInput then
-            dragInput:Disconnect()
-            dragInput = nil
-        end
-    end
-end)
-
--- Now ensure to reference everything in G2L1:
-
-local ScreenOpen = G2L1["5"]  -- Open Button
-local Close = G2L1["13"]  -- Close Button
-local PermClose = G2L1["12"]  -- Permanent Close Button
-
--- Ensure your ScreenGui is initially disabled or enabled
-ScreenOpen.Enabled = false
-
--- Close Button functionality
-local function closeUI()
-    G2L1["1"]:Destroy() -- Assuming G2L1["1"] is your ScreenGui
+permclose.Activated:Connect(function()
+   screengui:Destroy()
 end
-
--- Permanent Close functionality
-local function permCloseUI()
-    -- Store the setting (using DataStore or your custom persistence method)
-    local playerData = game:GetService("DataStoreService"):GetDataStore("YourDataStore") -- Example
-    playerData:SetAsync("IsUIClosed", true)
-    closeUI()
-end
-
--- Button click for close and permanent close (for mobile and desktop)
-local function onButtonClicked(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-        closeUI()
-    end
-end
-
-local function onPermButtonClicked(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-        permCloseUI()
-    end
-end
-
--- Listen to click/touch events for Close and Permanent Close buttons
-Close.InputBegan:Connect(onButtonClicked)
-PermClose.InputBegan:Connect(onPermButtonClicked)
