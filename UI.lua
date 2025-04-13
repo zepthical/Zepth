@@ -1,11 +1,10 @@
 local G2L = {};
 local IconLogo = {};
--- ServerStorage.Open.ScreenGui
+
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
 
--- ServerStorage.Open.ScreenGui.Window
 G2L["2"] = Instance.new("Frame", G2L["1"]);
 G2L["2"]["Active"] = true;
 G2L["2"]["BorderSizePixel"] = 0;
@@ -16,7 +15,6 @@ G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["2"]["Name"] = [[Window]];
 
 
--- ServerStorage.Open.ScreenGui.Window.Top
 G2L["3"] = Instance.new("Frame", G2L["2"]);
 G2L["3"]["BorderSizePixel"] = 0;
 G2L["3"]["BackgroundColor3"] = Color3.fromRGB(22, 21, 31);
@@ -26,7 +24,6 @@ G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["3"]["Name"] = [[Top]];
 
 
--- ServerStorage.Open.ScreenGui.Window.Top.Title
 G2L["4"] = Instance.new("TextLabel", G2L["3"]);
 G2L["4"]["BorderSizePixel"] = 0;
 G2L["4"]["TextSize"] = 16;
@@ -41,7 +38,6 @@ G2L["4"]["Name"] = [[Title]];
 G2L["4"]["Position"] = UDim2.new(0, 0, 0.02224, 0);
 
 
--- ServerStorage.Open.ScreenGui.Window.Top.Game
 G2L["5"] = Instance.new("TextLabel", G2L["3"]);
 G2L["5"]["BorderSizePixel"] = 0;
 G2L["5"]["TextSize"] = 16;
@@ -57,17 +53,14 @@ G2L["5"]["Name"] = [[Game]];
 G2L["5"]["Position"] = UDim2.new(0.08916, 0, -0.00196, 0);
 
 
--- ServerStorage.Open.ScreenGui.Window.Top.UICorner
 G2L["6"] = Instance.new("UICorner", G2L["3"]);
 G2L["6"]["CornerRadius"] = UDim.new(0, 6);
 
 
--- ServerStorage.Open.ScreenGui.Window.UICorner
 G2L["7"] = Instance.new("UICorner", G2L["2"]);
 G2L["7"]["CornerRadius"] = UDim.new(0, 6);
 
 
--- ServerStorage.Open.ScreenGui.Window.Tab
 G2L["8"] = Instance.new("Frame", G2L["2"]);
 G2L["8"]["BorderSizePixel"] = 0;
 G2L["8"]["BackgroundColor3"] = Color3.fromRGB(54, 53, 81);
@@ -78,12 +71,10 @@ G2L["8"]["Name"] = [[Tab]];
 G2L["8"]["BackgroundTransparency"] = 0.8;
 
 
--- ServerStorage.Open.ScreenGui.Window.Tab.UICorner
 G2L["9"] = Instance.new("UICorner", G2L["8"]);
 G2L["9"]["CornerRadius"] = UDim.new(0, 6);
 
 
--- ServerStorage.Open.ScreenGui.Window.Tab.Tab1
 G2L["a"] = Instance.new("TextButton", G2L["8"]);
 G2L["a"]["BorderSizePixel"] = 0;
 G2L["a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
@@ -97,7 +88,6 @@ G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["a"]["Position"] = UDim2.new(0.01734, 0, -0.00183, 0);
 
 
--- ServerStorage.Open.ScreenGui.Window.Tab.Tab2
 G2L["b"] = Instance.new("TextButton", G2L["8"]);
 G2L["b"]["BorderSizePixel"] = 0;
 G2L["b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
@@ -111,7 +101,6 @@ G2L["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["b"]["Position"] = UDim2.new(0.01735, 0, 0.09671, 0);
 
 
--- ServerStorage.Open.ScreenGui.Window.Tab.Tab3
 G2L["c"] = Instance.new("TextButton", G2L["8"]);
 G2L["c"]["BorderSizePixel"] = 0;
 G2L["c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
@@ -125,7 +114,6 @@ G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["c"]["Position"] = UDim2.new(0, 0, 0.19625, 0);
 
 
--- ServerStorage.Open.ScreenGui.Window.Tab.Tab4
 G2L["d"] = Instance.new("TextButton", G2L["8"]);
 G2L["d"]["BorderSizePixel"] = 0;
 G2L["d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
@@ -139,7 +127,6 @@ G2L["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["d"]["Position"] = UDim2.new(0.01735, 0, 0.29779, 0);
 
 
--- ServerStorage.Open.ScreenGui.Window.Tab.Tab5
 G2L["e"] = Instance.new("TextButton", G2L["8"]);
 G2L["e"]["BorderSizePixel"] = 0;
 G2L["e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
@@ -153,7 +140,6 @@ G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["e"]["Position"] = UDim2.new(0.01735, 0, 0.39965, 0);
 
 
--- ServerStorage.Open.ScreenGui.Window.Tab.Tab6
 G2L["f"] = Instance.new("TextButton", G2L["8"]);
 G2L["f"]["BorderSizePixel"] = 0;
 G2L["f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
@@ -167,7 +153,6 @@ G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["f"]["Position"] = UDim2.new(0.01735, 0, 0.49498, 0);
 
 
--- ServerStorage.Open.ScreenGui.Window.Tab.Tab7
 G2L["10"] = Instance.new("TextButton", G2L["8"]);
 G2L["10"]["BorderSizePixel"] = 0;
 G2L["10"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
@@ -181,7 +166,6 @@ G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["10"]["Position"] = UDim2.new(0, 0, 0.5907, 0);
 
 
--- ServerStorage.Open.ScreenGui.Window.Tab.Tab8
 G2L["11"] = Instance.new("TextButton", G2L["8"]);
 G2L["11"]["BorderSizePixel"] = 0;
 G2L["11"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
@@ -195,7 +179,6 @@ G2L["11"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["11"]["Position"] = UDim2.new(0, 0, 0.68683, 0);
 
 
--- ServerStorage.Open.ScreenGui.Window.PermClose
 G2L["12"] = Instance.new("TextButton", G2L["2"]);
 G2L["12"]["BorderSizePixel"] = 0;
 G2L["12"]["TextColor3"] = Color3.fromRGB(104, 104, 104);
@@ -210,7 +193,6 @@ G2L["12"]["Text"] = [[X]];
 G2L["12"]["Position"] = UDim2.new(0.94465, 0, 0, 0);
 
 
--- ServerStorage.Open.ScreenGui.Window.Close
 G2L["13"] = Instance.new("TextButton", G2L["2"]);
 G2L["13"]["BorderSizePixel"] = 0;
 G2L["13"]["TextColor3"] = Color3.fromRGB(104, 104, 104);
@@ -225,34 +207,13 @@ G2L["13"]["Text"] = [[-]];
 G2L["13"]["Position"] = UDim2.new(0.87508, 0, 0, 0);
 
 
--- ServerStorage.Open.ScreenGui.Window.UIStroke
 G2L["14"] = Instance.new("UIStroke", G2L["2"]);
 G2L["14"]["Thickness"] = 2.4;
 G2L["14"]["Color"] = Color3.fromRGB(58, 58, 58);
 
 
--- ServerStorage.Open.ScreenGui.UIAspectRatioConstraint
 G2L["15"] = Instance.new("UIAspectRatioConstraint", G2L["1"]);
 G2L["15"]["AspectRatio"] = 2.19106;
-
-IconLogo["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
-IconLogo["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
-
--- StarterGui.ScreenGui.Open
-IconLogo["2"] = Instance.new("ImageButton", IconLogo["1"]);
-IconLogo["2"]["Active"] = true;
-IconLogo["2"]["BorderSizePixel"] = 0;
-IconLogo["2"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-IconLogo["2"]["Size"] = UDim2.new({0.07, 0},{0.137, 0});
-IconLogo["2"]["Position"] = UDim2.new(0.13928, 0, 0.53252, 0);
-IconLogo["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-IconLogo["2"]["Name"] = [[Open]];
-IconLogo["2"]["BackgroundTransparency"] = 0.1;
-IconLogo["2"]["Image"] = "rbxassetid://101421319176955"
-
-
-
--- return G2L["1"], require;
 
 local UIS = game:GetService("UserInputService")
 local Top = G2L["3"]
@@ -296,14 +257,36 @@ end
 Top.InputBegan:Connect(onInputBegan)
 UIS.InputChanged:Connect(onInputChanged)
 
+
+local player = game:GetService("Players").LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = playerGui
+screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+-- Creating the ImageButton (Open button)
+local openButton = Instance.new("ImageButton")
+openButton.Parent = screenGui
+openButton.Active = true
+openButton.BorderSizePixel = 0
+openButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+openButton.Size = UDim2.new(0.07, 0, 0.137, 0)
+openButton.Position = UDim2.new(0.13928, 0, 0.53252, 0)
+openButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+openButton.Name = "Open"
+openButton.BackgroundTransparency = 0.1
+openButton.Image = "rbxassetid://101421319176955"
+
 local close = G2L["13"]
 local permclose = G2L["12"]
 local screengui = G2L["1"]
 
 close.Activated:Connect(function()
    screengui.Enabled = false
-end
+end)
 
 permclose.Activated:Connect(function()
    screengui:Destroy()
-end
+end)
