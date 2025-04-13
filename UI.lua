@@ -215,7 +215,7 @@ G2L["14"]["Color"] = Color3.fromRGB(58, 58, 58);
 G2L["15"] = Instance.new("UIAspectRatioConstraint", G2L["1"]);
 G2L["15"]["AspectRatio"] = 2.19106;
 
-return G2L["1"], require;
+-- return G2L["1"], require;
 
 local UIS = game:GetService("UserInputService")
 
