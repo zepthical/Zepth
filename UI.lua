@@ -281,14 +281,95 @@ end
 Top.InputBegan:Connect(onInputBegan)
 UIS.InputChanged:Connect(onInputChanged)
 
+local G2L = {};
+
+-- StarterGui.ScreenGui
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+
+-- StarterGui.ScreenGui.Open
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["Active"] = true;
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Size"] = UDim2.new(0.1, 0, 0.1, 0);
+G2L["2"]["Position"] = UDim2.new(0.13928, 0, 0.53252, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Name"] = [[Open]];
+G2L["2"]["BackgroundTransparency"] = 0.4;
+
+
+-- StarterGui.ScreenGui.Open.UICorner
+G2L["3"] = Instance.new("UICorner", G2L["2"]);
+G2L["3"]["CornerRadius"] = UDim.new(0, 6);
+
+
+-- StarterGui.ScreenGui.Open.Top
+G2L["4"] = Instance.new("TextLabel", G2L["2"]);
+G2L["4"]["BorderSizePixel"] = 0;
+G2L["4"]["TextSize"] = 14;
+G2L["4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4"]["BackgroundTransparency"] = 1;
+G2L["4"]["Size"] = UDim2.new(0.5143, 0, 0.52846, 0);
+G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["Text"] = [[Abyss]];
+G2L["4"]["Name"] = [[Top]];
+
+
+-- StarterGui.ScreenGui.Open.OpenButton
+G2L["5"] = Instance.new("TextButton", G2L["2"]);
+G2L["5"]["BorderSizePixel"] = 0;
+G2L["5"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5"]["TextSize"] = 25;
+G2L["5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5"]["FontFace"] = Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5"]["Size"] = UDim2.new(1, 0, 0.47154, 0);
+G2L["5"]["BackgroundTransparency"] = 1;
+G2L["5"]["Name"] = [[OpenButton]];
+G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5"]["Text"] = [[Open UI]];
+G2L["5"]["Position"] = UDim2.new(0, 0, 0.52846, 0);
+
+
+-- StarterGui.ScreenGui.Open.Game
+G2L["6"] = Instance.new("TextLabel", G2L["2"]);
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["TextSize"] = 14;
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["BackgroundTransparency"] = 1;
+G2L["6"]["Size"] = UDim2.new(0.35933, 0, 0.3561, 0);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Text"] = [[Game]];
+G2L["6"]["Name"] = [[Game]];
+G2L["6"]["Position"] = UDim2.new(0.39926, 0, 0, 0);
+
+local OpenButton = G2L["5"]  -- Replace with your open button
 local Close = G2L["13"]
 local PermClose = G2L["12"]
 local Gui = G2L["1"]
 
+
+OpenButton.Visible = false
+
+-- Show the open button when the window is closed
 Close.Activated:Connect(function()
     Gui.Enabled = false
+    OpenButton.Visible = true  -- Show the open button when the window is closed
 end)
 
+-- Permanently close the window and show the open button
 PermClose.Activated:Connect(function()
     Gui:Destroy()
+    OpenButton.Visible = true  -- Show the open button when the window is permanently closed
+end)
+
+-- Assuming you have a function to open the window again
+OpenButton.Activated:Connect(function()
+    Gui.Enabled = true
+    OpenButton.Visible = false  -- Hide the open button when the window is reopened
 end)
