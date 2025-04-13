@@ -1,20 +1,23 @@
 
 local G2L = {};
 
+-- StarterGui.ScreenGui
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
 
+-- StarterGui.ScreenGui.Window
 G2L["2"] = Instance.new("Frame", G2L["1"]);
 G2L["2"]["Active"] = true;
 G2L["2"]["BorderSizePixel"] = 0;
 G2L["2"]["BackgroundColor3"] = Color3.fromRGB(14, 14, 18);
-G2L["2"]["Size"] = UDim2.new(0.7, 0, 0.7, 0);
+G2L["2"]["Size"] = UDim2.new(0.60344, 0, 0.81382, 0);
 G2L["2"]["Position"] = UDim2.new(0.21344, 0, 0.07317, 0);
 G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["2"]["Name"] = [[Window]];
 
 
+-- StarterGui.ScreenGui.Window.Top
 G2L["3"] = Instance.new("Frame", G2L["2"]);
 G2L["3"]["BorderSizePixel"] = 0;
 G2L["3"]["BackgroundColor3"] = Color3.fromRGB(22, 21, 31);
@@ -22,9 +25,10 @@ G2L["3"]["Size"] = UDim2.new(1.00003, 0, 0.10304, 0);
 G2L["3"]["Position"] = UDim2.new(-0.00003, 0, -0.0023, 0);
 G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["3"]["Name"] = [[Top]];
-G2L["3"]["Active"] = true
+G2L["3"]["Active"] = true;
 
 
+-- StarterGui.ScreenGui.Window.Top.Title
 G2L["4"] = Instance.new("TextLabel", G2L["3"]);
 G2L["4"]["BorderSizePixel"] = 0;
 G2L["4"]["TextSize"] = 16;
@@ -39,6 +43,7 @@ G2L["4"]["Name"] = [[Title]];
 G2L["4"]["Position"] = UDim2.new(0, 0, 0.02224, 0);
 
 
+-- StarterGui.ScreenGui.Window.Top.Game
 G2L["5"] = Instance.new("TextLabel", G2L["3"]);
 G2L["5"]["BorderSizePixel"] = 0;
 G2L["5"]["TextSize"] = 16;
@@ -54,14 +59,17 @@ G2L["5"]["Name"] = [[Game]];
 G2L["5"]["Position"] = UDim2.new(0.08916, 0, -0.00196, 0);
 
 
+-- StarterGui.ScreenGui.Window.Top.UICorner
 G2L["6"] = Instance.new("UICorner", G2L["3"]);
 G2L["6"]["CornerRadius"] = UDim.new(0, 6);
 
 
+-- StarterGui.ScreenGui.Window.UICorner
 G2L["7"] = Instance.new("UICorner", G2L["2"]);
 G2L["7"]["CornerRadius"] = UDim.new(0, 6);
 
 
+-- StarterGui.ScreenGui.Window.Tab
 G2L["8"] = Instance.new("Frame", G2L["2"]);
 G2L["8"]["BorderSizePixel"] = 0;
 G2L["8"]["BackgroundColor3"] = Color3.fromRGB(54, 53, 81);
@@ -72,10 +80,12 @@ G2L["8"]["Name"] = [[Tab]];
 G2L["8"]["BackgroundTransparency"] = 0.8;
 
 
+-- StarterGui.ScreenGui.Window.Tab.UICorner
 G2L["9"] = Instance.new("UICorner", G2L["8"]);
 G2L["9"]["CornerRadius"] = UDim.new(0, 6);
 
 
+-- StarterGui.ScreenGui.Window.Tab.Tab1
 G2L["a"] = Instance.new("TextButton", G2L["8"]);
 G2L["a"]["BorderSizePixel"] = 0;
 G2L["a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
@@ -89,6 +99,7 @@ G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["a"]["Position"] = UDim2.new(0.01734, 0, -0.00183, 0);
 
 
+-- StarterGui.ScreenGui.Window.Tab.Tab2
 G2L["b"] = Instance.new("TextButton", G2L["8"]);
 G2L["b"]["BorderSizePixel"] = 0;
 G2L["b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
@@ -102,6 +113,7 @@ G2L["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["b"]["Position"] = UDim2.new(0.01735, 0, 0.09671, 0);
 
 
+-- StarterGui.ScreenGui.Window.Tab.Tab3
 G2L["c"] = Instance.new("TextButton", G2L["8"]);
 G2L["c"]["BorderSizePixel"] = 0;
 G2L["c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
@@ -115,6 +127,7 @@ G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["c"]["Position"] = UDim2.new(0, 0, 0.19625, 0);
 
 
+-- StarterGui.ScreenGui.Window.Tab.Tab4
 G2L["d"] = Instance.new("TextButton", G2L["8"]);
 G2L["d"]["BorderSizePixel"] = 0;
 G2L["d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
@@ -128,6 +141,7 @@ G2L["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["d"]["Position"] = UDim2.new(0.01735, 0, 0.29779, 0);
 
 
+-- StarterGui.ScreenGui.Window.Tab.Tab5
 G2L["e"] = Instance.new("TextButton", G2L["8"]);
 G2L["e"]["BorderSizePixel"] = 0;
 G2L["e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
@@ -141,6 +155,7 @@ G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["e"]["Position"] = UDim2.new(0.01735, 0, 0.39965, 0);
 
 
+-- StarterGui.ScreenGui.Window.Tab.Tab6
 G2L["f"] = Instance.new("TextButton", G2L["8"]);
 G2L["f"]["BorderSizePixel"] = 0;
 G2L["f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
@@ -154,6 +169,7 @@ G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["f"]["Position"] = UDim2.new(0.01735, 0, 0.49498, 0);
 
 
+-- StarterGui.ScreenGui.Window.Tab.Tab7
 G2L["10"] = Instance.new("TextButton", G2L["8"]);
 G2L["10"]["BorderSizePixel"] = 0;
 G2L["10"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
@@ -167,6 +183,7 @@ G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["10"]["Position"] = UDim2.new(0, 0, 0.5907, 0);
 
 
+-- StarterGui.ScreenGui.Window.Tab.Tab8
 G2L["11"] = Instance.new("TextButton", G2L["8"]);
 G2L["11"]["BorderSizePixel"] = 0;
 G2L["11"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
@@ -180,6 +197,7 @@ G2L["11"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["11"]["Position"] = UDim2.new(0, 0, 0.68683, 0);
 
 
+-- StarterGui.ScreenGui.Window.PermClose
 G2L["12"] = Instance.new("TextButton", G2L["2"]);
 G2L["12"]["BorderSizePixel"] = 0;
 G2L["12"]["TextColor3"] = Color3.fromRGB(104, 104, 104);
@@ -194,6 +212,7 @@ G2L["12"]["Text"] = [[X]];
 G2L["12"]["Position"] = UDim2.new(0.94465, 0, 0, 0);
 
 
+-- StarterGui.ScreenGui.Window.Close
 G2L["13"] = Instance.new("TextButton", G2L["2"]);
 G2L["13"]["BorderSizePixel"] = 0;
 G2L["13"]["TextColor3"] = Color3.fromRGB(104, 104, 104);
@@ -208,22 +227,23 @@ G2L["13"]["Text"] = [[-]];
 G2L["13"]["Position"] = UDim2.new(0.87508, 0, 0, 0);
 
 
+-- StarterGui.ScreenGui.Window.UIStroke
 G2L["14"] = Instance.new("UIStroke", G2L["2"]);
 G2L["14"]["Thickness"] = 2.4;
 G2L["14"]["Color"] = Color3.fromRGB(58, 58, 58);
 
 
+-- StarterGui.ScreenGui.UIAspectRatioConstraint
 G2L["15"] = Instance.new("UIAspectRatioConstraint", G2L["1"]);
 G2L["15"]["AspectRatio"] = 2.19106;
 
 -- return G2L["1"], require;
 
 local UIS = game:GetService("UserInputService")
-
 local Top = G2L["3"]
 local Window = G2L["2"]
 
-local dragging
+local dragging = false
 local dragStart
 local startPos
 
@@ -238,7 +258,7 @@ local function update(input)
 end
 
 Top.InputBegan:Connect(function(input)
-	if input.UserInputType == Enum.UserInputType.MouseButton1 then
+	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
 		dragging = true
 		dragStart = input.Position
 		startPos = Window.Position
@@ -251,14 +271,8 @@ Top.InputBegan:Connect(function(input)
 	end
 end)
 
-Top.InputChanged:Connect(function(input)
-	if input.UserInputType == Enum.UserInputType.MouseMovement then
-		input = input
-	end
-end)
-
 UIS.InputChanged:Connect(function(input)
-	if input.UserInputType == Enum.UserInputType.MouseMovement and dragging then
+	if (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) and dragging then
 		update(input)
 	end
 end)
