@@ -348,6 +348,53 @@ G2L["6"]["Text"] = [[Game]];
 G2L["6"]["Name"] = [[Game]];
 G2L["6"]["Position"] = UDim2.new(0.39926, 0, 0, 0);
 
+-- Make sure G2L["2"] is your Frame that you want to be draggable (which is "Open")
+local openFrame = G2L["2"]
+local topLabel = G2L["4"]  -- The Top label that needs to be touched
+local userInputService = game:GetService("UserInputService")
+
+-- Variables for dragging
+local dragInput = nil
+local dragStart = nil
+local startPosition = nil
+
+-- Function to handle the dragging
+local function updateDrag(input)
+    local delta = input.Position - dragStart
+    openFrame.Position = UDim2.new(startPosition.X.Scale, startPosition.X.Offset + delta.X, startPosition.Y.Scale, startPosition.Y.Offset + delta.Y)
+end
+
+-- Function to start dragging
+openFrame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        -- Check if the mouse click is on the top part of the frame
+        local mousePosition = input.Position
+        local topPosition = topLabel.AbsolutePosition
+        local topSize = topLabel.AbsoluteSize
+
+        if mousePosition.Y >= topPosition.Y and mousePosition.Y <= topPosition.Y + topSize.Y then
+            -- Store initial mouse position when the drag starts
+            dragStart = mousePosition
+            startPosition = openFrame.Position
+
+            -- Connect to input changed to track the mouse movement
+            dragInput = userInputService.InputChanged:Connect(updateDrag)
+        end
+    end
+end)
+
+-- Function to stop dragging
+openFrame.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        -- Disconnect the drag update when the mouse is released
+        if dragInput then
+            dragInput:Disconnect()
+            dragInput = nil
+        end
+    end
+end)
+
+
 local OpenButton = G2L["5"]  -- Replace with your open button
 local Close = G2L["13"]
 local PermClose = G2L["12"]
