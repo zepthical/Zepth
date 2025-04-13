@@ -22,6 +22,7 @@ G2L["3"]["Size"] = UDim2.new(1.00003, 0, 0.10304, 0);
 G2L["3"]["Position"] = UDim2.new(-0.00003, 0, -0.0023, 0);
 G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["3"]["Name"] = [[Top]];
+G2L["3"]["Active"] = true
 
 
 G2L["4"] = Instance.new("TextLabel", G2L["3"]);
@@ -222,8 +223,19 @@ local UIS = game:GetService("UserInputService")
 local Top = G2L["3"]
 local Window = G2L["2"]
 
-local dragging = false
-local dragInput, dragStart, startPos
+local dragging
+local dragStart
+local startPos
+
+local function update(input)
+	local delta = input.Position - dragStart
+	Window.Position = UDim2.new(
+		startPos.X.Scale,
+		startPos.X.Offset + delta.X,
+		startPos.Y.Scale,
+		startPos.Y.Offset + delta.Y
+	)
+end
 
 Top.InputBegan:Connect(function(input)
 	if input.UserInputType == Enum.UserInputType.MouseButton1 then
@@ -239,29 +251,27 @@ Top.InputBegan:Connect(function(input)
 	end
 end)
 
-
 Top.InputChanged:Connect(function(input)
 	if input.UserInputType == Enum.UserInputType.MouseMovement then
-		dragInput = input
+		input = input
 	end
 end)
-
 
 UIS.InputChanged:Connect(function(input)
-	if input == dragInput and dragging then
-		local delta = input.Position - dragStart
-		Window.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	if input.UserInputType == Enum.UserInputType.MouseMovement and dragging then
+		update(input)
 	end
 end)
+
 
 local Close = G2L["13"]
 local PermClose = G2L["12"]
 local Gui = G2L["1"]
 
 Close.Activated:Connect(function()
-   Gui.Enabled = false
+    Gui.Enabled = false
 end)
 
 PermClose.Activated:Connect(function()
-   Gui:Destroy()
+    Gui:Destroy()
 end)
