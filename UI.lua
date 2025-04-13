@@ -257,26 +257,29 @@ local function update(input)
 	)
 end
 
-Top.InputBegan:Connect(function(input)
+local function onInputBegan(input)
 	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
 		dragging = true
 		dragStart = input.Position
 		startPos = Window.Position
 
+		-- Listen for when the input ends to stop dragging
 		input.Changed:Connect(function()
 			if input.UserInputState == Enum.UserInputState.End then
 				dragging = false
 			end
 		end)
 	end
-end)
+end
 
-UIS.InputChanged:Connect(function(input)
+local function onInputChanged(input)
 	if (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) and dragging then
 		update(input)
 	end
-end)
+end
 
+Top.InputBegan:Connect(onInputBegan)
+UIS.InputChanged:Connect(onInputChanged)
 
 local Close = G2L["13"]
 local PermClose = G2L["12"]
