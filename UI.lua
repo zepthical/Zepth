@@ -395,28 +395,28 @@ openFrame.InputEnded:Connect(function(input)
 end)
 
 
-local OpenButton = G2L["5"]  -- Replace with your open button
+local ScreenOpen = G2L["1"]  -- Replace with your open button
 local Close = G2L["13"]
 local PermClose = G2L["12"]
 local Gui = G2L["1"]
 
 
-OpenButton.Visible = false
+ScreenOpen.Enabled = false
 
 -- Show the open button when the window is closed
 Close.Activated:Connect(function()
     Gui.Enabled = false
-    OpenButton.Visible = true  -- Show the open button when the window is closed
+    ScreenOpen.Enabled = true  -- Show the open button when the window is closed
 end)
 
 -- Permanently close the window and show the open button
 PermClose.Activated:Connect(function()
     Gui:Destroy()
-    OpenButton.Visible = true  -- Show the open button when the window is permanently closed
+    ScreenOpen.Enabled = true  -- Show the open button when the window is permanently closed
 end)
 
 -- Assuming you have a function to open the window again
 OpenButton.Activated:Connect(function()
     Gui.Enabled = true
-    OpenButton.Visible = false  -- Hide the open button when the window is reopened
+    ScreenOpen.Enabled = false  -- Hide the open button when the window is reopened
 end)
